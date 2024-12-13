@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F4A5D3D9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularDominoChain.Lib.Tests", "tests\CircularDominoChain.Lib.Tests\CircularDominoChain.Lib.Tests.csproj", "{C8BAF5C6-52D4-4E76-959E-512619A668C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularDominoChain.Console", "src\CircularDominoChain.Console\CircularDominoChain.Console.csproj", "{056F1128-4F75-4435-8C51-27F4DB90B399}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{C8BAF5C6-52D4-4E76-959E-512619A668C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8BAF5C6-52D4-4E76-959E-512619A668C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8BAF5C6-52D4-4E76-959E-512619A668C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056F1128-4F75-4435-8C51-27F4DB90B399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056F1128-4F75-4435-8C51-27F4DB90B399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056F1128-4F75-4435-8C51-27F4DB90B399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056F1128-4F75-4435-8C51-27F4DB90B399}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4DBE244C-124F-4945-8491-FA3A34418579} = {9687BC67-379E-4C1D-9F96-3D8BE68C56A9}
 		{C8BAF5C6-52D4-4E76-959E-512619A668C8} = {F4A5D3D9-0C01-40ED-A16F-225C3DE9786A}
+		{056F1128-4F75-4435-8C51-27F4DB90B399} = {9687BC67-379E-4C1D-9F96-3D8BE68C56A9}
 	EndGlobalSection
 EndGlobal
