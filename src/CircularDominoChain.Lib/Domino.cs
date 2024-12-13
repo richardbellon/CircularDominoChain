@@ -8,7 +8,9 @@ public readonly struct Domino
 
     public Domino(int side1, int side2)
     {
+        ArgumentOutOfRangeException.ThrowIfLessThan(side1, 0);
         ArgumentOutOfRangeException.ThrowIfGreaterThan(side1, MAX_VALUE);
+        ArgumentOutOfRangeException.ThrowIfLessThan(side2, 0);
         ArgumentOutOfRangeException.ThrowIfGreaterThan(side2, MAX_VALUE);
         Side1 = side1;
         Side2 = side2;
