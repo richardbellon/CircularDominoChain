@@ -69,6 +69,17 @@ public class CircularDominoChainSolverTests
     }
 
     [Theory]
+    [MemberData(nameof(SetsWithNoSolution))]
+    public async Task SetHasNoCircularChain_SolveAsync_ReturnsFailure(IEnumerable<Domino> dominos)
+    {
+        var sut = CreateSut();
+
+        var solveResult = await sut.SolveAsync(dominos);
+
+        solveResult.IsSuccess.Should().BeFalse();
+    }
+
+    [Theory]
     [InlineData(0, 100)]
     [InlineData(1, 1000)]
     [InlineData(2, 10000)]
@@ -89,6 +100,13 @@ public class CircularDominoChainSolverTests
         chain.Count.Should().Be(dominos.Length);
         IsCircularChain(solveResult.Value).Should().BeTrue();
     }
+
+    public static IEnumerable<object[]> SetsWithNoSolution =>
+       [
+            [new Domino[] { new(1,2), new(2,3), new(3,4), }],
+            [new Domino[] { new(1,2), new(2,3), new(5,6), new(6,1), }],
+            [new Domino[] { new(1,2), new(2,3), new(2,3), new(3,1), }],
+       ];
 
     private static bool IsCircularChain(IEnumerable<Domino> dominoChain)
     {
