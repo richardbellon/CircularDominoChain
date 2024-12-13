@@ -1,6 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace CircularDominoChain.Lib;
 
-public class Domino
+public readonly struct Domino
 {
     public const int MAX_VALUE = 6;
 
@@ -12,6 +14,17 @@ public class Domino
         Side2 = side2;
     }
 
+    public static bool operator ==(Domino d1, Domino d2)
+    {
+        return d1.Side1 == d2.Side1 && d1.Side2 == d2.Side2
+            || d1.Side1 == d2.Side2 && d1.Side2 == d2.Side1;
+    }
+
+    public static bool operator !=(Domino d1, Domino d2)
+    {
+        return !(d1 == d2);
+    }
+
     public int Side1 { get; }
 
     public int Side2 { get; }
@@ -21,16 +34,9 @@ public class Domino
         return Side2 == other.Side1;
     }
 
-    public bool Equals(Domino? other)
+    public override bool Equals([NotNullWhen(true)] object? obj)
     {
-        return other is not null
-            && (Side1 == other.Side1 && Side2 == other.Side2
-                || Side1 == other.Side2 && Side2 == other.Side1);
-    }
-
-    public override bool Equals(object? obj)
-    {
-        return Equals(obj as Domino);
+        return obj is Domino other && this == other;
     }
 
     public override int GetHashCode()
